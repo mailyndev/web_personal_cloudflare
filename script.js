@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitBtn   = document.getElementById('form-submit-btn');
 
     // Formspree endpoint
-    const FORMSPREE_URL = 'https://formspree.io/f/xzdlajqn';
+    const FORMSPREE_URL = 'https://formspree.io/f/mzdlajln';
 
     if (contactForm && formStatus) {
         contactForm.addEventListener('submit', async (e) => {
