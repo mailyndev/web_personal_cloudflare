@@ -1148,3 +1148,138 @@ strong { font-weight: 600; }
     .terminal-container { font-size: 0.8rem; height: 340px; }
     .contact-card { padding: 1rem 1.2rem; gap: 0.9rem; }
 }
+
+/* ==========================================================================
+   Avatar Styles
+   ========================================================================== */
+
+/* ── Hero Avatar ─────────────────────────────────────────────────────────── */
+.hero-avatar-wrap {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1.8rem;
+}
+
+/* On desktop (left-aligned hero text), avatar is left-aligned too */
+.hero-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 3px solid rgba(59, 130, 246, 0.5);
+    box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.08),
+                0 8px 32px rgba(37, 99, 235, 0.30);
+    display: block;
+    transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+.hero-avatar:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 0 8px rgba(59, 130, 246, 0.12),
+                0 12px 40px rgba(37, 99, 235, 0.40);
+}
+
+/* Animated spinning ring */
+.hero-avatar-ring {
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    background: conic-gradient(
+        from 0deg,
+        var(--blue-bright) 0deg,
+        var(--indigo)      120deg,
+        transparent        120deg,
+        transparent        180deg,
+        var(--blue-bright) 180deg,
+        var(--indigo)      300deg,
+        transparent        300deg
+    );
+    animation: ring-spin 4s linear infinite;
+    z-index: -1;
+    opacity: 0.6;
+    filter: blur(1px);
+}
+@keyframes ring-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* center avatar in mobile hero */
+@media (max-width: 1024px) {
+    .hero-avatar-wrap { margin-left: auto; margin-right: auto; }
+}
+
+/* ── About Section Avatar Block ─────────────────────────────────────────── */
+.about-avatar-block {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 3.5rem;
+    padding: 2rem 2.5rem;
+    background: #fff;
+    border: 1px solid rgba(37, 99, 235, 0.10);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+}
+
+.about-avatar-frame {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.about-avatar-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 4px solid #fff;
+    box-shadow: 0 0 0 3px var(--blue-bright),
+                0 10px 30px rgba(37, 99, 235, 0.20);
+    display: block;
+    transition: transform 0.4s var(--ease);
+}
+.about-avatar-img:hover { transform: scale(1.05); }
+
+.about-avatar-badge {
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--blue-vivid);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.22rem 0.75rem;
+    border-radius: var(--radius-pill);
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+}
+
+.about-avatar-name {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--text-on-light);
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.03em;
+}
+
+.about-avatar-role {
+    font-size: 1rem;
+    color: var(--text-sub-light);
+    line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+    .about-avatar-block {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.8rem 1.5rem;
+        gap: 1.2rem;
+    }
+    .about-avatar-img { width: 110px; height: 110px; }
+}
+
