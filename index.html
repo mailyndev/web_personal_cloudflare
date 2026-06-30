@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portafolio profesional de Mailyn Cordero, Junior Backend Developer en Python, SQL, Linux y Git. Conoce mis proyectos, aptitudes y trayectoria.">
+    <meta name="keywords" content="Mailyn Cordero, Backend Developer, Python, SQL, Linux, Git, Portafolio, Desarrollador Backend, Costa Rica">
+    <meta name="author" content="Mailyn Cordero">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mailyn Cordero | Junior Backend Developer">
+    <meta property="og:description" content="Junior Backend Developer especializada en Python, SQL, Linux y Git. Explora mi portafolio y proyectos backend.">
+    
+    <title>Mailyn Cordero | Junior Backend Developer Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="header" id="navbar">
+        <div class="container navbar-container">
+            <a href="#" class="logo">
+                <span class="logo-accent">&lt;</span>mailyn.dev<span class="logo-accent">/&gt;</span>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+                    <li><a href="#sobre-mi" class="nav-link">Sobre Mí</a></li>
+                    <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+                    <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+                    <li><a href="#ia-tech" class="nav-link">IA & Tech</a></li>
+                    <li><a href="#experiencia" class="nav-link">Experiencia</a></li>
+                    <li><a href="#contacto" class="nav-link nav-btn">Contacto</a></li>
+                </ul>
+            </nav>
+            
+            <button class="hamburger-menu" id="hamburger-btn" aria-label="Abrir menú de navegación">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section" id="inicio">
+            <div class="hero-bg-glow"></div>
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="badge">Disponible para trabajar</div>
+                    <h1 class="hero-title">Hola, soy <span class="name-gradient">Mailyn Cordero</span></h1>
+                    <h2 class="hero-subtitle">
+                        <span id="typed-text"></span><span class="typed-cursor">|</span>
+                    </h2>
+                    <p class="hero-desc">
+                        Desarrolladora Backend en formación enfocada en escribir código estructurado, optimización de bases de datos y buenas prácticas de desarrollo ágil en entornos colaborativos.
+                    </p>
+                    
+                    <div class="hero-actions">
+                        <a href="#contacto" class="btn btn-primary">
+                            <i class="fa-solid fa-paper-plane"></i> Contactar
+                        </a>
+                        <a href="https://www.linkedin.com/in/mailyndev" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                            <i class="fa-brands fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-icon-only" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Terminal Mockup (Interactive Widget) -->
+                <div class="hero-terminal-wrapper">
+                    <div class="terminal-container">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="btn-dot close"></span>
+                                <span class="btn-dot minimize"></span>
+                                <span class="btn-dot maximize"></span>
+                            </div>
+                            <div class="terminal-title">mailyn@backend-dev:~</div>
+                            <div class="terminal-status"><i class="fa-solid fa-circle-nodes"></i> main</div>
+                        </div>
+                        <div class="terminal-body" id="terminal-body">
+                            <div class="terminal-line">
+                                <span class="terminal-prompt">mailyn@portfolio:~$</span> <span class="terminal-cmd">cat info.json</span>
+                            </div>
+                            <div class="terminal-output">
+{
+  <span class="json-key">"nombre"</span>: <span class="json-val">"Mailyn Cordero"</span>,
+  <span class="json-key">"rol"</span>: <span class="json-val">"Junior Backend Developer"</span>,
+  <span class="json-key">"ubicacion"</span>: <span class="json-val">"Alajuela, Costa Rica"</span>,
+  <span class="json-key">"idiomas"</span>: [<span class="json-val">"Español (Nativo)"</span>, <span class="json-val">"Inglés (B2)"</span>],
+  <span class="json-key">"enfoque"</span>: [<span class="json-val">"System Design"</span>, <span class="json-val">"Databases"</span>, <span class="json-val">"Clean Code"</span>]
+}
+                            </div>
+                            <div class="terminal-line">
+                                <span class="terminal-prompt">mailyn@portfolio:~$</span> <span class="terminal-cmd">python -c "import sys; print(sys.version.split()[0])"</span>
+                            </div>
+                            <div class="terminal-output text-success">3.11.4</div>
+                            <div class="terminal-line">
+                                <span class="terminal-prompt">mailyn@portfolio:~$</span> <span class="terminal-cmd">guest_prompt --help</span>
+                            </div>
+                            <div class="terminal-output help-output">
+Comandos disponibles:
+  <button class="term-btn-link" onclick="runTerminalCommand('skills')">skills</button>    - Muestra habilidades técnicas principales
+  <button class="term-btn-link" onclick="runTerminalCommand('projects')">projects</button>  - Muestra proyectos de desarrollo
+  <button class="term-btn-link" onclick="runTerminalCommand('contact')">contact</button>   - Muestra datos de contacto directos
+  <button class="term-btn-link" onclick="runTerminalCommand('clear')">clear</button>     - Limpia la terminal
+                            </div>
+                            <div class="terminal-line input-line">
+                                <span class="terminal-prompt">mailyn@portfolio:~$</span>
+                                <input type="text" class="terminal-input" id="terminal-user-input" autocomplete="off" spellcheck="false" placeholder="Escribe un comando...">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section class="about-section" id="sobre-mi">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Sobre Mí</h2>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h3 class="about-highlight-title">Conectando lógica, bases de datos y metodologías ágiles.</h3>
+                        <p>
+                            Soy una desarrolladora backend en formación con una sólida base en <strong>Python, Linux, SQL y control de versiones</strong>. He completado capacitaciones intensivas que me han permitido dominar la escritura de código estructurado bajo el paradigma de programación orientada a objetos (POO), la administración de bases de datos relacionales y el uso eficiente de la línea de comandos.
+                        </p>
+                        <p>
+                            Además, poseo conocimientos en metodologías ágiles como <strong>Scrum</strong>, lo que me facilita integrarme eficazmente en flujos de trabajo colaborativos y entornos de desarrollo ágiles. Mi enfoque actual consiste en fortalecer mis habilidades técnicas, centrándome en el diseño de sistemas y las prácticas de codificación eficiente.
+                        </p>
+                        <p>
+                            Mi experiencia previa como <strong>profesora de inglés</strong> me ha otorgado habilidades de comunicación excepcionales, adaptabilidad y una sólida capacidad para el trabajo en equipo y la resolución de problemas estructurados.
+                        </p>
+                    </div>
+                    
+                    <div class="about-info-cards">
+                        <div class="info-card">
+                            <div class="info-card-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="info-card-content">
+                                <h4>Ubicación</h4>
+                                <p>San Ramón, Alajuela, Costa Rica</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-card">
+                            <div class="info-card-icon"><i class="fa-solid fa-language"></i></div>
+                            <div class="info-card-content">
+                                <h4>Idiomas</h4>
+                                <p>Español (Nativo) / Inglés B2 (85% - EFSET CEFR B1/B2)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-card">
+                            <div class="info-card-icon"><i class="fa-solid fa-id-card"></i></div>
+                            <div class="info-card-content">
+                                <h4>Otros Datos</h4>
+                                <p>Licencia de Conducir: B1</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills-section" id="habilidades">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Habilidades Técnicas</h2>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <div class="skills-grid">
+                    <!-- Core Skills -->
+                    <div class="skill-category-card">
+                        <div class="category-header">
+                            <i class="fa-solid fa-terminal category-icon"></i>
+                            <h3>Backend & Lenguajes</h3>
+                        </div>
+                        <ul class="skill-list">
+                            <li>
+                                <div class="skill-info">
+                                    <span>Python (Avanzado POO)</span>
+                                    <span>Avanzado</span>
+                                </div>
+                                <div class="progress-bar"><div class="progress-fill" style="width: 85%"></div></div>
+                            </li>
+                            <li>
+                                <div class="skill-info">
+                                    <span>SQL (MySQL / Postgres)</span>
+                                    <span>Intermedio</span>
+                                </div>
+                                <div class="progress-bar"><div class="progress-fill" style="width: 75%"></div></div>
+                            </li>
+                            <li>
+                                <div class="skill-info">
+                                    <span>Programación Orientada a Objetos</span>
+                                    <span>Avanzado</span>
+                                </div>
+                                <div class="progress-bar"><div class="progress-fill" style="width: 80%"></div></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Tools & Systems -->
+                    <div class="skill-category-card">
+                        <div class="category-header">
+                            <i class="fa-solid fa-screwdriver-wrench category-icon"></i>
+                            <h3>Herramientas y Sistemas</h3>
+                        </div>
+                        <ul class="skill-list">
+                            <li>
+                                <div class="skill-info">
+                                    <span>Git & GitHub (Control de Versiones)</span>
+                                    <span>Avanzado</span>
+                                </div>
+                                <div class="progress-bar"><div class="progress-fill" style="width: 90%"></div></div>
+                            </li>
+                            <li>
+                                <div class="skill-info">
+                                    <span>Linux (Bash / CLI)</span>
+                                    <span>Intermedio</span>
+                                </div>
+                                <div class="progress-bar"><div class="progress-fill" style="width: 75%"></div></div>
+                            </li>
+                            <li>
+                                <div class="skill-info">
+                                    <span>Visual Studio Code</span>
+                                    <span>Avanzado</span>
+                                </div>
+                                <div class="progress-bar"><div class="progress-fill" style="width: 85%"></div></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- AI & Emerging Tech -->
+                    <div class="skill-category-card ai-card">
+                        <div class="category-header">
+                            <i class="fa-solid fa-brain category-icon ai-icon"></i>
+                            <h3>Inteligencia Artificial</h3>
+                        </div>
+                        <ul class="skill-list">
+                            <li>
+                                <div class="skill-info">
+                                    <span>Prompt Engineering</span>
+                                    <span>Intermedio</span>
+                                </div>
+                                <div class="progress-bar"><div class="progress-fill ai-fill" style="width: 78%"></div></div>
+                            </li>
+                            <li>
+                                <div class="skill-info">
+                                    <span>Herramientas IA (Gemini, ChatGPT, Claude)</span>
+                                    <span>Avanzado</span>
+                                </div>
+                                <div class="progress-bar"><div class="progress-fill ai-fill" style="width: 85%"></div></div>
+                            </li>
+                            <li>
+                                <div class="skill-info">
+                                    <span>Automatización con IA</span>
+                                    <span>Intermedio</span>
+                                </div>
+                                <div class="progress-bar"><div class="progress-fill ai-fill" style="width: 72%"></div></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Methodology & Soft Skills -->
+                    <div class="skill-category-card">
+                        <div class="category-header">
+                            <i class="fa-solid fa-people-group category-icon"></i>
+                            <h3>Metodologías y Colaboración</h3>
+                        </div>
+                        <ul class="skill-list">
+                            <li>
+                                <div class="skill-info">
+                                    <span>Metodologías Scrum / Agile</span>
+                                    <span>Intermedio</span>
+                                </div>
+                                <div class="progress-bar"><div class="progress-fill" style="width: 80%"></div></div>
+                            </li>
+                            <li>
+                                <div class="skill-info">
+                                    <span>Resolución de Conflictos (Merging)</span>
+                                    <span>Avanzado</span>
+                                </div>
+                                <div class="progress-bar"><div class="progress-fill" style="width: 85%"></div></div>
+                            </li>
+                            <li>
+                                <div class="skill-info">
+                                    <span>Trabajo en Equipo y Comunicación</span>
+                                    <span>Excelente</span>
+                                </div>
+                                <div class="progress-bar"><div class="progress-fill" style="width: 95%"></div></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="quick-skills-tags">
+                    <span class="skill-tag">Control de versiones</span>
+                    <span class="skill-tag">Colaboración en equipo</span>
+                    <span class="skill-tag">Merging</span>
+                    <span class="skill-tag">Python POO</span>
+                    <span class="skill-tag">Bases de datos relacionales</span>
+                    <span class="skill-tag">Bash Scripting</span>
+                    <span class="skill-tag">Scrum Workflow</span>
+                    <span class="skill-tag ai-tag">Prompt Engineering</span>
+                    <span class="skill-tag ai-tag">IA Generativa</span>
+                    <span class="skill-tag ai-tag">Automatización IA</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects-section" id="proyectos">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Proyectos Destacados</h2>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card">
+                        <div class="project-image-placeholder">
+                            <div class="project-icon-wrapper">
+                                <i class="fa-solid fa-boxes-stacked"></i>
+                            </div>
+                            <span class="project-badge">Backend</span>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Sistema de Gestión de Inventario</h3>
+                            <p class="project-desc">
+                                Desarrollé un sistema básico para el control y gestión de inventario en Python. El proyecto se enfoca en la lógica pura de negocio, operaciones CRUD (Crear, Leer, Actualizar, Borrar) y estructuración modular del código.
+                            </p>
+                            <div class="project-tech-tags">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">CRUD</span>
+                                <span class="tech-tag">Git</span>
+                                <span class="tech-tag">Modular Coding</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                                    <i class="fa-brands fa-github"></i> Código en GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card">
+                        <div class="project-image-placeholder second">
+                            <div class="project-icon-wrapper">
+                                <i class="fa-solid fa-database"></i>
+                            </div>
+                            <span class="project-badge">Database Design</span>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Esquema e Integridad de Base de Datos</h3>
+                            <p class="project-desc">
+                                Diseño y estructuración de bases de datos utilizando SQL/MySQL. Implementación de consultas avanzadas, disparadores (triggers), vistas y optimización de índices para consistencia de datos y rendimiento eficiente.
+                            </p>
+                            <div class="project-tech-tags">
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">Relational Database</span>
+                                <span class="tech-tag">DML & DDL</span>
+                                <span class="tech-tag">SQL Tuning</span>
+                            </div>
+                            <div class="project-links">
+                                <span class="project-link-btn-disabled">
+                                    <i class="fa-solid fa-code"></i> Proyecto Académico
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI & Tech Formation Section -->
+        <section class="ia-section" id="ia-tech">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title"><span class="ai-title-icon"><i class="fa-solid fa-brain"></i></span> IA & Formación Tech</h2>
+                    <div class="section-divider ai-divider"></div>
+                    <p class="section-subtitle">Explorando la intersección entre el desarrollo backend y la inteligencia artificial aplicada.</p>
+                </div>
+
+                <div class="ia-cards-grid">
+                    <!-- AI Tools Card -->
+                    <div class="ia-feature-card">
+                        <div class="ia-card-glow"></div>
+                        <div class="ia-card-header">
+                            <div class="ia-icon-wrap">
+                                <i class="fa-solid fa-robot"></i>
+                            </div>
+                            <span class="ia-badge">Uso diario</span>
+                        </div>
+                        <h3>Herramientas de IA Generativa</h3>
+                        <p>Uso activo de modelos de lenguaje como <strong>Google Gemini</strong>, <strong>ChatGPT (OpenAI)</strong> y <strong>Claude (Anthropic)</strong> para potenciar la productividad, generar código, depurar errores y documentar proyectos backend de forma eficiente.</p>
+                        <div class="ia-tool-chips">
+                            <span class="ia-chip"><i class="fa-brands fa-google"></i> Gemini</span>
+                            <span class="ia-chip">ChatGPT</span>
+                            <span class="ia-chip">Claude</span>
+                            <span class="ia-chip">Copilot</span>
+                        </div>
+                    </div>
+
+                    <!-- Prompt Engineering Card -->
+                    <div class="ia-feature-card">
+                        <div class="ia-card-glow second"></div>
+                        <div class="ia-card-header">
+                            <div class="ia-icon-wrap second">
+                                <i class="fa-solid fa-terminal"></i>
+                            </div>
+                            <span class="ia-badge">Habilidad aplicada</span>
+                        </div>
+                        <h3>Prompt Engineering</h3>
+                        <p>Diseño de instrucciones precisas y estructuradas para obtener respuestas óptimas de modelos de IA. Aplicación de técnicas como <strong>chain-of-thought</strong>, <strong>few-shot prompting</strong> y contextos de sistema para automatizar flujos de trabajo de desarrollo.</p>
+                        <div class="ia-tool-chips">
+                            <span class="ia-chip">Few-shot</span>
+                            <span class="ia-chip">Chain-of-thought</span>
+                            <span class="ia-chip">System Prompts</span>
+                        </div>
+                    </div>
+
+                    <!-- AI-Assisted Dev Card -->
+                    <div class="ia-feature-card">
+                        <div class="ia-card-glow third"></div>
+                        <div class="ia-card-header">
+                            <div class="ia-icon-wrap third">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <span class="ia-badge">En práctica</span>
+                        </div>
+                        <h3>Desarrollo Asistido por IA</h3>
+                        <p>Integración de asistentes de IA en el flujo de trabajo de Python: generación de boilerplate, refactorización de código, creación de tests unitarios, y optimización de consultas SQL utilizando modelos LLM como co-piloto de desarrollo.</p>
+                        <div class="ia-tool-chips">
+                            <span class="ia-chip">Python + IA</span>
+                            <span class="ia-chip">Code Review</span>
+                            <span class="ia-chip">SQL Optimization</span>
+                        </div>
+                    </div>
+
+                    <!-- Blockchain / Web3 Card -->
+                    <div class="ia-feature-card wide-card">
+                        <div class="ia-card-glow fourth"></div>
+                        <div class="ia-card-header">
+                            <div class="ia-icon-wrap fourth">
+                                <i class="fa-solid fa-link"></i>
+                            </div>
+                            <span class="ia-badge">Formación en curso</span>
+                        </div>
+                        <h3>Blockchain & Tecnologías Emergentes</h3>
+                        <p>Actualmente explorando el ecosistema <strong>Web3</strong> y tecnologías de contratos inteligentes a través del programa de ConquerBlocks. Comprensión de los fundamentos de redes descentralizadas, consenso distribuido y su intersección con el backend moderno y las aplicaciones de IA descentralizada.</p>
+                        <div class="ia-tool-chips">
+                            <span class="ia-chip"><i class="fa-brands fa-ethereum"></i> Blockchain</span>
+                            <span class="ia-chip">Smart Contracts</span>
+                            <span class="ia-chip">Web3</span>
+                            <span class="ia-chip">ConquerBlocks</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Education Timeline -->
+        <section class="timeline-section" id="experiencia">
+            <div class="container">
+                <div class="timeline-grid">
+                    
+                    <!-- Experience Column -->
+                    <div class="timeline-col">
+                        <div class="section-header timeline-header">
+                            <h2 class="section-title"><i class="fa-solid fa-briefcase"></i> Experiencia</h2>
+                            <div class="section-divider"></div>
+                        </div>
+                        
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <span class="timeline-date">2020 – Presente</span>
+                                <h3 class="timeline-title">Profesora de Inglés</h3>
+                                <h4 class="timeline-subtitle">Clases personalizadas y soporte</h4>
+                                <p class="timeline-text">
+                                    Experiencia en la enseñanza del inglés y desarrollo de habilidades de comunicación asertiva, facilitación del aprendizaje para estudiantes con necesidades personalizadas.
+                                </p>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <span class="timeline-date">2018</span>
+                                <h3 class="timeline-title">Servicio al Cliente / Cajera</h3>
+                                <h4 class="timeline-subtitle">Distribuidora VillaMu S.A.</h4>
+                                <p class="timeline-text">
+                                    Atención de clientes, manejo y cuadre de caja chica, y asistencia en tareas administrativas básicas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Education Column -->
+                    <div class="timeline-col">
+                        <div class="section-header timeline-header">
+                            <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Educación</h2>
+                            <div class="section-divider"></div>
+                        </div>
+                        
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <span class="timeline-date">En curso</span>
+                                <h3 class="timeline-title">Full Stack & Blockchain Development</h3>
+                                <h4 class="timeline-subtitle">ConquerBlocks</h4>
+                                <p class="timeline-text">
+                                    Programa enfocado en desarrollo de aplicaciones web fullstack, backend estructurado e introducción a redes blockchain y contratos inteligentes.
+                                </p>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <span class="timeline-date">2015 – 2020</span>
+                                <h3 class="timeline-title">Bachillerato en la Enseñanza del Inglés</h3>
+                                <h4 class="timeline-subtitle">Universidad de Costa Rica</h4>
+                                <p class="timeline-text">
+                                    Estudios universitarios en lingüística, pedagogía e idiomas, logrando un nivel de competencia lingüística B2.
+                                </p>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <span class="timeline-date">Certificaciones</span>
+                                <div class="cert-list">
+                                    <div class="cert-item"><i class="fa-solid fa-certificate"></i> Python Avanzado POO</div>
+                                    <div class="cert-item"><i class="fa-solid fa-certificate"></i> Git y GitHub</div>
+                                    <div class="cert-item"><i class="fa-solid fa-certificate"></i> EFSET English Score: B2 (85%)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contacto">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Contáctame</h2>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <div class="contact-grid">
+                    <!-- Contact Cards -->
+                    <div class="contact-info">
+                        <h3>¿Hablamos sobre un proyecto?</h3>
+                        <p class="contact-intro-text">
+                            Estoy entusiasmada por sumarme a equipos dinámicos y contribuir con mis habilidades de backend, persistencia de datos y desarrollo ágil.
+                        </p>
+                        
+                        <div class="contact-card-list">
+                            <!-- Email Card with Copy Feature -->
+                            <div class="contact-card active-card">
+                                <div class="contact-card-icon">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div class="contact-card-details">
+                                    <span>Envíame un correo</span>
+                                    <strong id="email-address">elenacordero18@hotmail.com</strong>
+                                </div>
+                                <button class="copy-btn" id="copy-email-btn" title="Copiar correo">
+                                    <i class="fa-solid fa-copy"></i>
+                                </button>
+                                <div class="copy-tooltip" id="copy-tooltip">¡Copiado!</div>
+                            </div>
+                            
+                            <!-- LinkedIn Card -->
+                            <a href="https://www.linkedin.com/in/mailyndev" target="_blank" rel="noopener noreferrer" class="contact-card link-card">
+                                <div class="contact-card-icon">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </div>
+                                <div class="contact-card-details">
+                                    <span>Conectemos en LinkedIn</span>
+                                    <strong>mailyndev</strong>
+                                </div>
+                                <div class="card-arrow">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Form -->
+                    <div class="contact-form-container">
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="form-name">Nombre Completo</label>
+                                    <input type="text" id="form-name" required placeholder="Tu nombre">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="form-email">Correo Electrónico</label>
+                                    <input type="email" id="form-email" required placeholder="correo@ejemplo.com">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="form-message">Mensaje</label>
+                                    <textarea id="form-message" rows="5" required placeholder="Hola Mailyn, me gustaría hablar contigo sobre..."></textarea>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block" id="form-submit-btn">
+                                <span>Enviar Mensaje</span>
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                            <div class="form-status" id="form-status"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <span class="logo-accent">&lt;</span>mailyn.dev<span class="logo-accent">/&gt;</span>
+                <p>Junior Backend Developer</p>
+            </div>
+            
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/in/mailyndev" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="mailto:elenacordero18@hotmail.com" aria-label="Email">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+            
+            <div class="footer-copy">
+                <p>&copy; 2026 Mailyn Cordero. Todos los derechos reservados.</p>
+                <p class="footer-meta">Diseñado con dedicación y optimizado para el backend.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
