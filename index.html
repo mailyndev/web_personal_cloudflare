@@ -632,22 +632,33 @@ Comandos disponibles:
                     <!-- Contact Form -->
                     <div class="contact-form-container">
                         <form id="contact-form" class="contact-form">
+
+                            <!-- Web3Forms hidden fields -->
+                            <!-- INSTRUCCIÓN: Ve a https://web3forms.com, ingresa tu email
+                                 elenacordero18@hotmail.com y pega tu access key aquí abajo -->
+                            <input type="hidden" name="access_key" value="TU_ACCESS_KEY_AQUI">
+                            <input type="hidden" name="subject" value="Nuevo mensaje desde tu portafolio – mailyndev">
+                            <input type="hidden" name="from_name" value="Portfolio Mailyn Cordero">
+                            <input type="hidden" name="redirect" value="false">
+                            <!-- Anti-spam honeypot -->
+                            <input type="checkbox" name="botcheck" style="display:none">
+
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="form-name">Nombre Completo</label>
-                                    <input type="text" id="form-name" required placeholder="Tu nombre">
+                                    <input type="text" id="form-name" name="name" required placeholder="Tu nombre">
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="form-email">Correo Electrónico</label>
-                                    <input type="email" id="form-email" required placeholder="correo@ejemplo.com">
+                                    <input type="email" id="form-email" name="email" required placeholder="correo@ejemplo.com">
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="form-message">Mensaje</label>
-                                    <textarea id="form-message" rows="5" required placeholder="Hola Mailyn, me gustaría hablar contigo sobre..."></textarea>
+                                    <textarea id="form-message" name="message" rows="5" required placeholder="Hola Mailyn, me gustaría hablar contigo sobre..."></textarea>
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-primary btn-block" id="form-submit-btn">

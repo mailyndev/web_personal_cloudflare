@@ -129,51 +129,93 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ----------------------------------------------------
-    // 5. Contact Form Mock Submission & Validation
+    // 5. Contact Form – Real Email via Web3Forms API
     // ----------------------------------------------------
     const contactForm = document.getElementById('contact-form');
-    const formStatus = document.getElementById('form-status');
-    const submitBtn = document.getElementById('form-submit-btn');
+    const formStatus  = document.getElementById('form-status');
+    const submitBtn   = document.getElementById('form-submit-btn');
 
     if (contactForm && formStatus) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            
-            // Client side basic check
-            const nameVal = document.getElementById('form-name').value.trim();
-            const emailVal = document.getElementById('form-email').value.trim();
+
+            // Client-side validation
+            const nameVal    = document.getElementById('form-name').value.trim();
+            const emailVal   = document.getElementById('form-email').value.trim();
             const messageVal = document.getElementById('form-message').value.trim();
-            
+
             if (!nameVal || !emailVal || !messageVal) {
                 formStatus.className = 'form-status error';
-                formStatus.textContent = 'Por favor, completa todos los campos.';
+                formStatus.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Por favor, completa todos los campos.';
                 return;
             }
-            
-            // Visual submit state
+
+            // Email format check
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailVal)) {
+                formStatus.className = 'form-status error';
+                formStatus.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Por favor, ingresa un correo válido.';
+                return;
+            }
+
+            // Loading state
+            formStatus.className = 'form-status';
+            formStatus.textContent = '';
             submitBtn.disabled = true;
             submitBtn.querySelector('span').textContent = 'Enviando...';
             submitBtn.querySelector('i').className = 'fa-solid fa-spinner fa-spin';
-            
-            // Simulated network delay
-            setTimeout(() => {
-                formStatus.className = 'form-status success';
-                formStatus.innerHTML = '<i class="fa-solid fa-circle-check"></i> ¡Mensaje enviado con éxito! Me pondré en contacto contigo pronto.';
-                
-                // Reset form fields
-                contactForm.reset();
-                
-                // Reset button state
+
+            try {
+                // Build form data object from the HTML form
+                const formData = new FormData(contactForm);
+                const object   = Object.fromEntries(formData);
+                const json     = JSON.stringify(object);
+
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method:  'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept':       'application/json'
+                    },
+                    body: json
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    // ✅ Success
+                    formStatus.className = 'form-status success';
+                    formStatus.innerHTML = '<i class="fa-solid fa-circle-check"></i> ¡Mensaje enviado con éxito! Me pondré en contacto contigo pronto.';
+                    contactForm.reset();
+                } else {
+                    // ❌ API returned an error
+                    console.error('Web3Forms error:', result);
+                    // Check if it's a missing/invalid access key
+                    if (result.message && result.message.toLowerCase().includes('access key')) {
+                        formStatus.className = 'form-status error';
+                        formStatus.innerHTML = '<i class="fa-solid fa-key"></i> Access key no configurada. Agrega tu clave de Web3Forms.';
+                    } else {
+                        formStatus.className = 'form-status error';
+                        formStatus.innerHTML = '<i class="fa-solid fa-circle-xmark"></i> Hubo un problema al enviar. Intenta de nuevo o escríbeme directamente.';
+                    }
+                }
+            } catch (err) {
+                // 🌐 Network / fetch error
+                console.error('Fetch error:', err);
+                formStatus.className = 'form-status error';
+                formStatus.innerHTML = '<i class="fa-solid fa-wifi"></i> Error de conexión. Verifica tu internet e intenta de nuevo.';
+            } finally {
+                // Always re-enable the button
                 submitBtn.disabled = false;
                 submitBtn.querySelector('span').textContent = 'Enviar Mensaje';
                 submitBtn.querySelector('i').className = 'fa-solid fa-paper-plane';
-                
-                // Clear success message after 5 seconds
+
+                // Auto-clear status after 6 seconds
                 setTimeout(() => {
                     formStatus.textContent = '';
                     formStatus.className = 'form-status';
-                }, 5000);
-            }, 1500);
+                }, 6000);
+            }
         });
     }
 });
