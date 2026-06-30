@@ -129,11 +129,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ----------------------------------------------------
-    // 5. Contact Form – Real Email via Web3Forms API
+    // 5. Contact Form – Real Email via Formspree
     // ----------------------------------------------------
     const contactForm = document.getElementById('contact-form');
     const formStatus  = document.getElementById('form-status');
     const submitBtn   = document.getElementById('form-submit-btn');
+
+    // Formspree endpoint
+    const FORMSPREE_URL = 'https://formspree.io/f/xzdlajqn';
 
     if (contactForm && formStatus) {
         contactForm.addEventListener('submit', async (e) => {
@@ -166,38 +169,34 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.querySelector('i').className = 'fa-solid fa-spinner fa-spin';
 
             try {
-                // Build form data object from the HTML form
-                const formData = new FormData(contactForm);
-                const object   = Object.fromEntries(formData);
-                const json     = JSON.stringify(object);
-
-                const response = await fetch('https://api.web3forms.com/submit', {
+                const response = await fetch(FORMSPREE_URL, {
                     method:  'POST',
                     headers: {
                         'Content-Type': 'application/json',
                         'Accept':       'application/json'
                     },
-                    body: json
+                    body: JSON.stringify({
+                        name:    nameVal,
+                        email:   emailVal,
+                        message: messageVal
+                    })
                 });
 
                 const result = await response.json();
 
-                if (result.success) {
-                    // ✅ Success
+                if (response.ok) {
+                    // ✅ Formspree returns HTTP 200 on success
                     formStatus.className = 'form-status success';
                     formStatus.innerHTML = '<i class="fa-solid fa-circle-check"></i> ¡Mensaje enviado con éxito! Me pondré en contacto contigo pronto.';
                     contactForm.reset();
                 } else {
-                    // ❌ API returned an error
-                    console.error('Web3Forms error:', result);
-                    // Check if it's a missing/invalid access key
-                    if (result.message && result.message.toLowerCase().includes('access key')) {
-                        formStatus.className = 'form-status error';
-                        formStatus.innerHTML = '<i class="fa-solid fa-key"></i> Access key no configurada. Agrega tu clave de Web3Forms.';
-                    } else {
-                        formStatus.className = 'form-status error';
-                        formStatus.innerHTML = '<i class="fa-solid fa-circle-xmark"></i> Hubo un problema al enviar. Intenta de nuevo o escríbeme directamente.';
-                    }
+                    // ❌ Formspree returned an error (e.g. 422 validation)
+                    console.error('Formspree error:', result);
+                    const errMsg = result.errors
+                        ? result.errors.map(e => e.message).join(', ')
+                        : 'Error desconocido';
+                    formStatus.className = 'form-status error';
+                    formStatus.innerHTML = `<i class="fa-solid fa-circle-xmark"></i> ${errMsg}. Intenta de nuevo o escríbeme directamente.`;
                 }
             } catch (err) {
                 // 🌐 Network / fetch error
